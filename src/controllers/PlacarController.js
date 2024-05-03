@@ -1,6 +1,6 @@
 import Placar from "../models/Placar.js";
 
-const adicionarPontuacao = async (req, res) => {
+async function adicionarPontuacao (req, res) {
     try {
         const {nome, pontuacao} = req.body;
 
@@ -14,7 +14,7 @@ const adicionarPontuacao = async (req, res) => {
     }
 };
 
-const obterPontuacoes = async (req, res) => {
+async function obterPontuacoes  (req, res) {
     try {
         const topPontuacoes = await Placar.find().sort({pontuacao: -1}).limit(10);
 
